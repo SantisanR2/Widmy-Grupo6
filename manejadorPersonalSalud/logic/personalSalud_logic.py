@@ -2,7 +2,8 @@ from ..models import PersonalSalud
 
 #Devuelve todo el personal de salud
 def getPersonalSalud():
-    return PersonalSalud.objects.all()
+    queryset = PersonalSalud.objects.all()
+    return (queryset)
 
 #Devuelve el personal de salud con el id dado
 def getPersonalSaludById(id):
