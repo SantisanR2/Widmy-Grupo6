@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'widmy_db',
         'USER': 'widmy',
         'PASSWORD': 'widmy',
-        'HOST': '10.31.208.3',
+        'HOST': '34.70.113.75',
         'PORT': '5432',
     }
 }
