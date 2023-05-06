@@ -8,13 +8,7 @@ def getHistoriaById(idHistoria):
     queryset = Historias.objects.filter(id=idHistoria)
     return (queryset)
 
-def updateHistoria(idHistoria, idPaciente, idPersonalSalud, fecha, sintomas, diagnostico, tratamiento):
-    historia = Historias.objects.get(id=idHistoria)
-    historia.idPaciente = idPaciente
-    historia.idPersonalSalud = idPersonalSalud
-    historia.fecha = fecha
-    historia.sintomas = sintomas
-    historia.diagnostico = diagnostico
-    historia.tratamiento = tratamiento
+def createHistoria(form):
+    historia = form.save()
     historia.save()
-    return historia
+    return (historia)
