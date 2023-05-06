@@ -19,11 +19,14 @@
                     <table class="table table-hover">
                         <thead>
                         <tr style="color:#0E2EB0">
-                            <th>Historias Clínicas</th>
+                            <th>Lista de historias clínicas</th>
                         </tr>
                         </thead>
                         <tbody>
-
+                        <tr>
+                            <td>id</td>
+                            <td>Descripción</td>
+                        </tr>
                         {% for historia in listaHistorias %}
                         <tr>
                             <td>{{ historia.id }}</td>
