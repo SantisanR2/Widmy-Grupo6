@@ -140,7 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "/login/auth0" 
 LOGIN_REDIRECT_URL = "/" 
-LOGOUT_REDIRECT_URL = "https://widmy-sprint3.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.132.173.142:8080" 
+LOGOUT_REDIRECT_URL = "https://widmy-sprint3.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F35.225.232.68:8080" 
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
 SOCIAL_AUTH_AUTH0_DOMAIN = 'widmy-sprint3.us.auth0.com' 
 SOCIAL_AUTH_AUTH0_KEY = 'XElqKwbVtQTdBDBRaEqJpDePmiVmUlsO' 
