@@ -35,5 +35,5 @@ def getRole(request):
     headers = {'authorization': 'Bearer ' + accessToken}
     resp = requests.get(url, headers=headers)
     userinfo = resp.json()
-    role = userinfo['widmy-sprint3.com/role']
+    role = userinfo['widmy-sprint3.us.auth0.com/role']
     return (role)
