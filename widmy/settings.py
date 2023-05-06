@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'manejadorPersonalSalud',
     'manejadorHistorias',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -80,9 +81,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'widmy_db',
-        'USER': 'widmy_user',
-        'PASSWORD': 'isis2503',
-        'HOST': '34.122.46.227',
+        'USER': 'widmy',
+        'PASSWORD': 'widmy',
+        'HOST': '10.31.208.3',
         'PORT': '5432',
     }
 }
@@ -122,10 +123,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'static', 'media')
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = "/login/auth0" 
+LOGIN_REDIRECT_URL = "/" 
+LOGOUT_REDIRECT_URL = "https://widmy-sprint3.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F35.225.232.68:8080" 
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
+SOCIAL_AUTH_AUTH0_DOMAIN = 'widmy-sprint3.us.auth0.com' 
+SOCIAL_AUTH_AUTH0_KEY = 'XElqKwbVtQTdBDBRaEqJpDePmiVmUlsO' 
+SOCIAL_AUTH_AUTH0_SECRET = 'rIXERDlxwkGsRoYgixaBgnYyiFf2NNL_W7o8VNsZ9m_GuUH96G9AdrhiFQ9a7bgT' 
+SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile', 'email', 'role', ] 
+AUTHENTICATION_BACKENDS = { 'monitoring.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend'}
