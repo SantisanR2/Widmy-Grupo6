@@ -146,4 +146,4 @@ SOCIAL_AUTH_AUTH0_DOMAIN = 'widmy-sprint3.us.auth0.com'
 SOCIAL_AUTH_AUTH0_KEY = 'XElqKwbVtQTdBDBRaEqJpDePmiVmUlsO' 
 SOCIAL_AUTH_AUTH0_SECRET = 'rIXERDlxwkGsRoYgixaBgnYyiFf2NNL_W7o8VNsZ9m_GuUH96G9AdrhiFQ9a7bgT' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile', 'email', 'role', ] 
-AUTHENTICATION_BACKENDS = { 'monitoring.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend'}
+AUTHENTICATION_BACKENDS = { 'widmy.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend'}
