@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'manejadorPersonalSalud',
     'manejadorHistorias',
     'social_django',
+    'encriptador',
 ]
 
 MIDDLEWARE = [

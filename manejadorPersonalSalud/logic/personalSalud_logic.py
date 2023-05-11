@@ -1,4 +1,5 @@
 from ..models import PersonalSalud
+from encriptador.encriptador import generar_hash
 
 #Devuelve todo el personal de salud
 def getPersonalSalud():
@@ -10,10 +11,15 @@ def getPersonalSaludById(id):
     return PersonalSalud.objects.get(id=id)
 
 #Crea el personal de salud con los datos dados
-def createPersonalSalud(nombre, especialidad, telefono, correo, direccion, fechaNacimiento, estaTurno):
-    personalSalud = PersonalSalud(nombre=nombre, especialidad=especialidad, telefono=telefono, correo=correo, direccion=direccion, fechaNacimiento=fechaNacimiento, estaTurno=estaTurno)
-    personalSalud.save()
-    return personalSalud
+def createPersonalSalud(form, hash):
+    if(hash == generar_hash(form)):
+        print("Hash verificado correctamente")
+        personalSalud = form.save()
+        personalSalud.save()
+    else:
+        print("Hash incorrecto, no se creó el personal de salud")
+    return ()
+    
 
 #Actualiza el personal de salud con el id dado
 def updatePersonalSalud(id, nombre, especialidad, telefono, correo, direccion, fechaNacimiento, estaTurno):
