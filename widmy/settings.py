@@ -140,7 +140,7 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "/login/auth0" 
-LOGIN_REDIRECT_URL = "https://widmy-sprint3.us.auth0.com/v2/login?returnTo=http%3A%2F%2F35.184.224.25:8000" 
+LOGIN_REDIRECT_URL = "/" 
 LOGOUT_REDIRECT_URL = "https://widmy-sprint3.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F35.184.224.25:8000" 
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
 SOCIAL_AUTH_AUTH0_DOMAIN = 'widmy-sprint3.us.auth0.com' 
@@ -148,4 +148,3 @@ SOCIAL_AUTH_AUTH0_KEY = 'XElqKwbVtQTdBDBRaEqJpDePmiVmUlsO'
 SOCIAL_AUTH_AUTH0_SECRET = 'rIXERDlxwkGsRoYgixaBgnYyiFf2NNL_W7o8VNsZ9m_GuUH96G9AdrhiFQ9a7bgT' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile', 'email', 'role', ] 
 AUTHENTICATION_BACKENDS = { 'widmy.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend'}
-SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
