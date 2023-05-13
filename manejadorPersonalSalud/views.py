@@ -18,8 +18,8 @@ def personalSaludCreate(request):
         form = PersonalSaludForm(request.POST)
 
         if form.is_valid():
-            #hash = generar_hash(form.cleaned_data['nombre'])
-            hash = "hash_errado"
+            hash = generar_hash(form.cleaned_data['nombre'])
+            #hash = "hash_errado"
             print("Hash generado: " + hash)
             createPersonalSalud(form, hash)
             messages.add_message(request, messages.SUCCESS, 'Personal Salud Creado Correctamente')
