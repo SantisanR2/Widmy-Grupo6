@@ -12,7 +12,7 @@ def getPersonalSaludById(id):
 
 #Crea el personal de salud con los datos dados
 def createPersonalSalud(form, hash):
-    if(hash == generar_hash(form)):
+    if(hash == generar_hash(form.nombre.value)):
         print("Hash verificado correctamente")
         personalSalud = form.save()
         personalSalud.save()

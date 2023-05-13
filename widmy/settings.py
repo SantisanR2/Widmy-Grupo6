@@ -148,4 +148,3 @@ SOCIAL_AUTH_AUTH0_KEY = 'XElqKwbVtQTdBDBRaEqJpDePmiVmUlsO'
 SOCIAL_AUTH_AUTH0_SECRET = 'rIXERDlxwkGsRoYgixaBgnYyiFf2NNL_W7o8VNsZ9m_GuUH96G9AdrhiFQ9a7bgT' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile', 'email', 'role', ] 
 AUTHENTICATION_BACKENDS = { 'widmy.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend'}
-SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'

@@ -16,11 +16,11 @@ def personalSaludList(request):
 def personalSaludCreate(request):
     if request.method == 'POST':
         form = PersonalSaludForm(request.POST)
-        formEncriptado = generar_hash(form)
-        print("Hash generado: " + formEncriptado)
+        hash = generar_hash(form.nombre.value)
+        print("Hash generado: " + hash)
 
         if form.is_valid():
-            createPersonalSalud(form, formEncriptado)
+            createPersonalSalud(form, hash)
             messages.add_message(request, messages.SUCCESS, 'Personal Salud Creado Correctamente')
             return HttpResponseRedirect(reverse('personalSaludCreate'))
         else:
