@@ -16,7 +16,7 @@ def personalSaludList(request):
 def personalSaludCreate(request):
     if request.method == 'POST':
         form = PersonalSaludForm(request.POST)
-        hash = generar_hash(form.nombre.value)
+        hash = generar_hash(form.cleaned_data['nombre'])
         print("Hash generado: " + hash)
 
         if form.is_valid():
