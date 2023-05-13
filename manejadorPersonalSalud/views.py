@@ -32,4 +32,4 @@ def personalSaludCreate(request):
         'form': form,
     }
 
-    return render(request, 'PersonalSalud/personalSalud_create.html', context)
+    return render(request, 'ManejadorPersonalSalud/personalSalud_create.html', context)
