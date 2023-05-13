@@ -20,6 +20,7 @@
                         <thead>
                         <tr style="color:#0E2EB0">
                             <th>Personal Salud</th>
+                            <th><button onclick="/personalSaludCreate">Crear</button></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -27,6 +28,7 @@
                         {% for persona in listaPersonal %}
                         <tr>
                             <td>{{ persona.nombre }}</td>
+                            <td>{{ persona.id }}</td>
                         </tr>
                         {% endfor %}
 
